@@ -13,8 +13,6 @@ class ShortestPathPositiveWeights(AbstractShortestPath):
         self.distance: List[int] = []
 
     def run(self) -> None:
-        # TODO: Implement the run() function, which generates (and caches) shortest path to all vertices from the root.
-        # Your code here. Nothing needs to be returned
         self.vertices = [-1 for _ in range(self.num_vertices)]
         self.distance = [sys.maxsize for _ in range(self.num_vertices)]
         self.distance[0] = 0
@@ -30,10 +28,7 @@ class ShortestPathPositiveWeights(AbstractShortestPath):
             heapq.heapify(edges)
 
     def get_shortest_path(self, vertex_idx: int) -> List[int]:
-        # TODO: Implement get_shortest_path function, which returns the shortest path
-        #  (as a list of vertices, starting from 0).
-        # Your code here. Return the shortest path in the form of a list of vertices.
-        # If shortest path does not exist, return [0]. Dummy return value shown below.
+        # If shortest path does not exist, return [0].
         if self.vertices:
             result = []
             while vertex_idx != -1:
@@ -43,9 +38,7 @@ class ShortestPathPositiveWeights(AbstractShortestPath):
         return [0]
 
     def get_shortest_weight(self, vertex_idx: int) -> int:
-        # TODO: Implement get_shortest_weight, which returns the total weight of the shortest path.
-        # Your code here. Return the sum of weights in the shortest path.
-        # If shortest path does not exist, return 0. Dummy return value shown below.
+        # If shortest path does not exist, return 0. 
         if self.vertices:
             return self.distance[vertex_idx]
         return 0
@@ -59,8 +52,6 @@ class ShortestPathNegativeWeights(AbstractShortestPath):
         self.distance: List[int] = []
 
     def run(self) -> None:
-        # TODO: Implement the run() function, which generates (and caches) shortest path to all vertices from the root.
-        # Your code here. Nothing needs to be returned
         self.vertices = [-1 for _ in range(self.num_vertices)]
         self.distance = [sys.maxsize for _ in range(self.num_vertices)]
         self.distance[0] = 0
@@ -80,8 +71,6 @@ class ShortestPathNegativeWeights(AbstractShortestPath):
         return
 
     def get_shortest_path(self, vertex_idx: int) -> List[int]:
-        # TODO: Implement get_shortest_path function, which returns the shortest path
-        #  (as a list of vertices, starting from 0).
         # Your code here. Return the shortest path in the form of a list of vertices.
         # If shortest path does not exist, return [0]. Dummy return value shown below.
         if self.vertices:
@@ -93,9 +82,7 @@ class ShortestPathNegativeWeights(AbstractShortestPath):
         return [0]
 
     def get_shortest_weight(self, vertex_idx: int) -> int:
-        # TODO: Implement get_shortest_weight, which returns the total weight of the shortest path.
-        # Your code here. Return the sum of weights in the shortest path.
-        # If shortest path does not exist, return 0. Dummy return value shown below.
+        # If shortest path does not exist, return 0. 
         if self.vertices:
             return self.distance[vertex_idx]
         return 0
